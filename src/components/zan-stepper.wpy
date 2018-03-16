@@ -1,0 +1,88 @@
+<template>
+  <view class="zan-stepper {{ size === 'small' ? 'zan-stepper--small' : '' }}">
+    <view class="zan-stepper__minus {{ stepper <= min ? 'zan-stepper--disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper <= min }}" bindtap="handleZanStepperMinus">-</view>
+    <input class="zan-stepper__text {{ min >= max ? 'zan-stepper--disabled' : '' }}" type="number" data-component-id="{{ componentId }}" data-min="{{ min }}" data-max="{{ max }}" value="{{ stepper }}" disabled="{{ min >= max }}" bindblur="handleZanStepperBlur"></input>
+    <view class="zan-stepper__plus {{ stepper >= max ? 'zan-stepper--disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper >= max }}" bindtap="handleZanStepperPlus">+</view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class zanStepper extends wepy.component {
+  props = {
+    stepper: {
+      type: Number,
+      default: 0
+    },
+    min: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: 0
+    },
+    size: {
+      type: String,
+      default: ''
+    },
+    componentId: String
+  }
+  data = {}
+  methods = {
+    handleZanStepperMinus(e) {
+      this.handle(e, -1)
+    },
+
+    handleZanStepperPlus(e) {
+      this.handle(e, +1)
+    },
+
+    handleZanStepperBlur(e) {
+      let dataset = e.currentTarget.dataset
+      let componentId = dataset.componentId
+      let max = +dataset.max
+      let min = +dataset.min
+      let value = e.detail.value
+
+      if (!value) {
+        setTimeout(() => {
+          this.callback(componentId, min)
+        }, 16)
+        this.callback(componentId, value)
+        return '' + value
+      }
+
+      value = +value
+      if (value > max) {
+        value = max
+      } else if (value < min) {
+        value = min
+      }
+
+      this.callback(componentId, value)
+
+      return '' + value
+    }
+  }
+
+  handle(e, num) {
+    let dataset = e.currentTarget.dataset
+    let componentId = dataset.componentId
+    let disabled = dataset.disabled
+    let stepper = +dataset.stepper
+
+    if (disabled) return null
+
+    this.callback(componentId, stepper + num)
+  }
+
+  callback(componentId, stepper) {
+    stepper = +stepper
+    let e = { componentId, stepper }
+    console.info('[zan:stepper:change]', e)
+
+    this.$emit('zanStepperChange', e)
+  }
+}
+</script>

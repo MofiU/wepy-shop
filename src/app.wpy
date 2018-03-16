@@ -1,0 +1,61 @@
+<style src="./styles/weui.scss"></style>
+<style src="./styles/zanui.scss"></style>
+<style src="./styles/base.scss"></style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+import { setStore } from 'wepy-redux'
+import configStore from './store'
+
+const store = configStore()
+setStore(store)
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index',
+      'pages/home/index',
+      'pages/cart/index'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      backgroundColor: '#eeeeee',
+      navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      selectedColor: '#3cc51f',
+      list: [
+        {
+          pagePath: 'pages/home/index',
+          text: '主页',
+          iconPath: 'images/iconfont-home.png',
+          selectedIconPath: 'images/iconfont-home-active.png'
+        },
+        {
+          pagePath: 'pages/cart/index',
+          iconPath: 'images/iconfont-cart.png',
+          selectedIconPath: 'images/iconfont-cart-active.png',
+          text: '购物车'
+        }
+      ]
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+    this.use('promisify')
+  }
+
+  onLaunch() {
+  }
+}
+</script>

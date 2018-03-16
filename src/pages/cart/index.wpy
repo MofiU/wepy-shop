@@ -1,0 +1,242 @@
+<style type="scss">
+  .weui-media-box__info {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    color: #CECECE;
+    line-height: 1em;
+    list-style: none;
+    overflow: hidden;
+  }
+  .page {
+    margin: 10px 0px;
+  }
+  .weui-media-box__title {
+    line-height: 2em;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+</style>
+<template>
+  <view class="page">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta">编辑</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">
+            香辣小龙虾
+            <zanstepper :stepper.sync="stepper2" :min="min2" :max="max2" componentId="stepper2" size="small" />
+          </view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ 100</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： 5</text>
+              <text class="info-meta">单价： 20</text>
+              <text class="info-meta">总价： 100</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Stepper from '@components/zan-stepper'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的购物车'
+    }
+
+    data = {
+      icon60: '',
+      stepper2: 5,
+      min2: 0,
+      max2: 10
+    }
+
+    components = {
+      zanstepper: Stepper
+    }
+
+    onLoad() {
+
+    }
+
+    onShow() {
+
+    }
+
+    events = {
+      zanStepperChange({ componentId, stepper }, event) {
+        this[componentId] = stepper
+        this.$apply()
+      }
+    }
+
+    onReachBottom () {
+      console.log('reach bottom')
+    }
+  }
+</script>

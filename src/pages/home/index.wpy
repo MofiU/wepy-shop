@@ -1,0 +1,22 @@
+<template>
+  <view>
+     <text>I am home/index page</text>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '主页'
+    }
+
+    onLoad() {
+    }
+
+    onShow() {
+
+    }
+  }
+</script>
