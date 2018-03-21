@@ -1,208 +1,22 @@
 <style type="scss">
-  .weui-media-box__info {
-    margin-top: 15px;
-    padding-bottom: 5px;
-    font-size: 13px;
-    color: #CECECE;
-    line-height: 1em;
-    list-style: none;
-    overflow: hidden;
-  }
   .page {
-    margin: 10px 0px;
-  }
-  .weui-media-box__title {
-    line-height: 2em;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    margin: 10px 0;
   }
 </style>
 <template>
   <view class="page">
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">香辣小龙虾</view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <text class="info-meta">编辑</text>
-        <text class="info-meta">删除</text>
-      </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{icon60}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">
-            香辣小龙虾
-            <zanstepper :stepper.sync="stepper2" :min="min2" :max="max2" componentId="stepper2" size="small" />
-          </view>
-            <view class="weui-media-box__desc">
-              <text class="text-orangered">¥ 100</text>
-            </view>
-            <view class="weui-media-box__info">
-              <text class="info-meta">数量： 5</text>
-              <text class="info-meta">单价： 20</text>
-              <text class="info-meta">总价： 100</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+    <cartList :list.sync="products"/>
   </view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" bindtap="confirmOrder">去结算</button>
+    <button class="weui-btn" type="warn" bindtap="clear">清空</button>
+  </view>
+  <view class="placeholder"></view>
 </template>
 
 <script>
   import wepy from 'wepy'
-  import Stepper from '@components/zan-stepper'
+  import CartList from '@components/cart/list'
 
   export default class Index extends wepy.page {
     config = {
@@ -210,14 +24,15 @@
     }
 
     data = {
-      icon60: '',
-      stepper2: 5,
-      min2: 0,
-      max2: 10
+      products: [
+        {_id: 1, editing: false, count: 5, price: 20}, {_id: 2, editing: false, count: 9, price: 65}, {_id: 3, editing: false, count: 8, price: 90},
+        {_id: 4, editing: false, count: 3, price: 30}, {_id: 5, editing: false, count: 3, price: 45}, {_id: 6, editing: false, count: 7, price: 100},
+        {_id: 7, editing: false, count: 4, price: 40}, {_id: 8, editing: false, count: 2, price: 66}, {_id: 9, editing: false, count: 6, price: 200}
+      ]
     }
 
     components = {
-      zanstepper: Stepper
+      cartList: CartList
     }
 
     onLoad() {
@@ -226,13 +41,6 @@
 
     onShow() {
 
-    }
-
-    events = {
-      zanStepperChange({ componentId, stepper }, event) {
-        this[componentId] = stepper
-        this.$apply()
-      }
     }
 
     onReachBottom () {

@@ -1,0 +1,73 @@
+<template>
+  <repeat for="{{list}}" key="_id" index="_id" item="item">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text class="info-meta" @tap="edit({{item._id}})" wx:if="{{!item.editing}}">编辑</text>
+        <text class="info-meta" @tap="save({{item._id}})" wx:if="{{item.editing}}">保存</text>
+        <text class="info-meta">删除</text>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">
+            香辣小龙虾
+            <zanstepper :stepper.sync="item.count" :min="min" :max="max" :componentId="item._id" size="small" wx:if="{{item.editing}}"/>
+          </view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ {{item.price}}</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">数量： {{item.count}}</text>
+              <text class="info-meta">单价： {{item.price}}</text>
+              <text class="info-meta">总价： {{item.count * item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </repeat>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import Stepper from '@components/zan-stepper'
+
+    export default class ProductList extends wepy.component {
+      props = {
+        list: {
+          type: Array,
+          default: []
+        }
+      }
+
+      data = {
+        min: 1,
+        max: 100
+      }
+
+      components = {
+        zanstepper: Stepper
+      }
+
+      methods = {
+        edit (id) {
+          this.list.find((item) => { return item._id === id }).editing = true
+          this.$apply()
+        },
+        save (id) {
+          this.list.find((item) => { return item._id === id }).editing = false
+          this.$apply()
+        }
+      }
+
+      events = {
+        zanStepperChange({ componentId, stepper }, event) {
+          this.list.find((item) => { return item._id === componentId }).count = stepper
+          this.$apply()
+        }
+      }
+    }
+</script>

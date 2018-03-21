@@ -1,0 +1,156 @@
+<style type="scss">
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50rpx 0;
+  align-items: center;
+  background: #479de6;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+/*.logout {
+  position: relative;
+  margin-top: 1.17647059em;
+  line-height: 1.41176471;
+  font-size: 17px;
+  padding: 10px 15px;
+  background: #fff;
+  text-align: center;
+}
+
+.logout:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #D9D9D9;
+  color: #D9D9D9;
+}
+
+.logout:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1rpx solid #D9D9D9;
+  color: #D9D9D9;
+}*/
+.logout {
+  text-align: center;
+  font-size: 17px;
+}
+.wrap {
+  margin-top: 10px
+}
+</style>
+<template>
+  <view>
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl || '/images/iconfont-user-login.png' }}" background-size="cover" @tap="{{userInfo.avatarUrl ? '' : 'login'}}"></image>
+      <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+    </view>
+    <view class="weui-cells weui-cells_after-title wrap">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">收货地址</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">联系客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">常见问题</view>
+      </navigator>
+    </view>
+      <!-- <view class="weui-cell weui-cell_access logout"  hover-class="weui-cell_active">登出账号</view> -->
+    <view class="weui-cells weui-cells_after-title wrap">
+      <view url="" class="weui-cell weui-cell_access logout" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">登出账号</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的信息'
+    }
+
+    data = {
+      userInfo: {
+        nickName: '未登录'
+      }
+    }
+
+    methods = {
+      login () {
+        wepy.login().then((res) => {
+          wepy.getUserInfo().then((res) => {
+            wepy.setStorageSync('userInfo', res.userInfo)
+            this.userInfo = res.userInfo
+            this.$apply()
+          }, (error) => {
+            console.log('user reject userinfo', error)
+            wepy.showModal({
+              title: '授权失败',
+              content: '如果想授权用户信息请点击确认'
+            }).then((res) => {
+              if (res.confirm) {
+                wepy.openSetting().then((res) => {
+                  console.log('openSetting')
+                  if (res) {
+                    if (res.authSetting['scope.userInfo']) {
+                      console.log('用户授权成功')
+                      wepy.getUserInfo().then((res) => {
+                        wepy.setStorageSync('userInfo', res.userInfo)
+                        this.userInfo = res.userInfo
+                        this.$apply()
+                      })
+                    } else {
+                      console.log('木有授权用户信息')
+                    }
+                  }
+                }, (error) => {
+                  console.log('设置失败返回', error)
+                })
+              }
+            }, (error) => {
+              console.error('show modal error', error)
+            })
+          })
+        }, (error) => {
+          console.error('login failed', error)
+        })
+      }
+    }
+
+    onLoad() {
+      let userInfo = wepy.getStorageSync('userInfo')
+      if (userInfo) {
+        this.userInfo = userInfo
+        this.$apply()
+      }
+    }
+  }
+</script>

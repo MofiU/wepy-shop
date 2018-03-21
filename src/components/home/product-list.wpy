@@ -1,0 +1,40 @@
+<style type="scss">
+  .weui-panel {
+    margin: 0px;
+  }
+</style>
+<template>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <repeat for="{{list}}" key="_id" index="_id" item="item">
+        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{icon60}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">香辣小龙虾</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ {{item.price}}</text>
+            </view>
+            <view class="weui-media-box__info">
+              <text class="info-meta">味道美滋滋</text>
+            </view>
+          </view>
+        </view>
+      </repeat>
+    </view>
+  </view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+
+    export default class ProductList extends wepy.component {
+      props = {
+        list: {
+          type: Array,
+          default: []
+        }
+      }
+    }
+</script>

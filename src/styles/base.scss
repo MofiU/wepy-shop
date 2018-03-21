@@ -9,3 +9,29 @@ page {
 .text-orangered {
   color: orangered;
 }
+
+.weui-media-box__info {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  font-size: 13px;
+  color: #CECECE;
+  line-height: 1em;
+  list-style: none;
+  overflow: hidden;
+}
+
+.weui-media-box__title {
+  line-height: 2em;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.button-sp-area {
+  margin: 20px auto 0;
+  width: 80%;
+  text-align: center;
+}
+.placeholder {
+  height: 100px;
+}

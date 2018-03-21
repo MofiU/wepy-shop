@@ -1,0 +1,51 @@
+<template>
+  <zanTab1 :tab.sync="tab1" componentId="tab1"></zanTab1>
+</template>
+
+<script>
+import wepy from 'wepy'
+import zanTab from '@components/zan-tab'
+
+export default class ProducTab extends wepy.component {
+  components = {
+    zanTab1: zanTab
+  }
+  data = {
+    tab1: {
+      list: [
+        {
+          id: 'all',
+          title: '全部'
+        },
+        {
+          id: 'topay',
+          title: '待付款'
+        },
+        {
+          id: 'tosend',
+          title: '待发货'
+        },
+        {
+          id: 'send',
+          title: '待收货'
+        },
+        {
+          id: 'sign',
+          title: '已完成'
+        }
+      ],
+      selectedId: 'all',
+      scroll: false
+    }
+  }
+  events = {
+    zanTabChange(selectedId, event) {
+      let { componentId } = event.source
+      this[componentId].selectedId = selectedId
+      this.$apply()
+    }
+  }
+  methods = {}
+  onLoad() {}
+}
+</script>

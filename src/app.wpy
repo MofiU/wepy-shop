@@ -17,7 +17,8 @@ export default class extends wepy.app {
     pages: [
       'pages/index',
       'pages/home/index',
-      'pages/cart/index'
+      'pages/cart/index',
+      'pages/me/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -40,6 +41,12 @@ export default class extends wepy.app {
           iconPath: 'images/iconfont-cart.png',
           selectedIconPath: 'images/iconfont-cart-active.png',
           text: '购物车'
+        },
+        {
+          pagePath: 'pages/me/index',
+          iconPath: 'images/iconfont-user.png',
+          selectedIconPath: 'images/iconfont-user-active.png',
+          text: '我的'
         }
       ]
     }

@@ -1,15 +1,34 @@
 <template>
   <view>
-     <text>I am home/index page</text>
+    <searchBar />
+    <productTab />
+    <productList :list.sync='products' />
   </view>
 </template>
 
 <script>
   import wepy from 'wepy'
+  import SearchBar from '@components/home/search-bar'
+  import ProductList from '@components/home/product-list'
+  import ProductTab from '@components/home/product-tab'
 
   export default class Index extends wepy.page {
     config = {
       navigationBarTitleText: '主页'
+    }
+
+    data = {
+      products: [
+        {_id: 1, editing: false, count: 5, price: 20}, {_id: 2, editing: false, count: 9, price: 65}, {_id: 3, editing: false, count: 8, price: 90},
+        {_id: 4, editing: false, count: 3, price: 30}, {_id: 5, editing: false, count: 3, price: 45}, {_id: 6, editing: false, count: 7, price: 100},
+        {_id: 7, editing: false, count: 4, price: 40}, {_id: 8, editing: false, count: 2, price: 66}, {_id: 9, editing: false, count: 6, price: 200}
+      ]
+    }
+
+    components = {
+      searchBar: SearchBar,
+      productList: ProductList,
+      productTab: ProductTab
     }
 
     onLoad() {
